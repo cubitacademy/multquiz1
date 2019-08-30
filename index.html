@@ -318,6 +318,10 @@ margin-right:9px;
     display:block;
     margin-left:40%;
 }
+.restart{
+    margin-left:52px;
+}
+        
     </style>
 </head>
 <body>
@@ -368,7 +372,7 @@ margin-right:9px;
 
     <p id="qheight"><h4><b>Q</b><div id="quesno">01/</div><div id="tno">0</div></h4></p>
     <div class="well well-lg quo" id="quo">athul</div><br />
- <p>Ans : <input type="number" id="ans" placeholder="enter answer">
+ <p>Ans : <input type="number" id="ans" onkeyup="ansfunction()">
      <span id="correctans"></span>
  </p>
         <div class="btn-group-vertical btn-block">
@@ -385,15 +389,15 @@ margin-right:9px;
         <button  class="next btn btn-lg"id="next">Next&nbsp &nbsp</button>
       <input type=text id="tex" value="2">
    <button value="0" id="no">0</button>
-    <input type="button" value="Try again" onClick="location.href=location.href">
+    <input type="button" class="restart btn"value="Restart" onClick="location.href=location.href">
  </div>
  </div>
    </div>
 </div>
 
 
+
 <script>
-    
     function go(){
     document.getElementById('mainpart').style.display ='block'
 document.getElementById('select').style.display ='none'
@@ -734,6 +738,8 @@ ans=document.getElementById("ans").value
     document.getElementById('box').style.borderColor = 'green'   
        var y=document.getElementById("tick");
    y.classList.add("true");
+        audio.playbackRate =2;
+         audio.play();
         y2=y2+1
        // $("#sco").text((y2))
        document.getElementById("sco").innerHTML=y2
@@ -742,7 +748,10 @@ ans=document.getElementById("ans").value
     document.getElementById('box').style.borderColor = 'brown' 
     var y=document.getElementById("wrong");
    y.classList.add("false");
+    audiof.playbackRate =2;
+    audiof.play();
     document.getElementById("correctans").innerHTML="Ans : "+ aa
+document.getElementById("next").focus(); 
     
          }
          
@@ -754,6 +763,8 @@ ans=document.getElementById("ans").value
  document.getElementById("no").innerHTML=n
     
 // })
+if(aa==ans){
+next() }
 }
 
  
@@ -1167,7 +1178,16 @@ function myFunction1(){
 }
 }
 
+function ansfunction(){
+sa=document.getElementById("ans").value.length
+sb=document.getElementById("opt1").innerHTML.length
+if(sa==sb){
+ button=document.getElementById("check")
+ button.click()
+}
+}
 </script>
+
       
       
     </body>
