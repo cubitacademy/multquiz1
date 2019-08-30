@@ -8,8 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-
-html{
+        html{
     height:100%;
 }
 
@@ -113,25 +112,7 @@ hr{
     border-color:red;
 
 }
-.check{
-    position:absolute ;
-    border:2px solid black;
-    right:5%;
-    top:99%;
-    display:;
-    background-color:
-#FF7F50;
-    color:white;
-}
-.next{
-    position:absolute ;
-    color:white;
-    border:2px solid black;
-    top:99%;
-    right:5%;
-    display:none;
-    background-color:#32CD32;
-}
+
  .next:hover,.check:hover{
       color:white;
      background-color:red;
@@ -313,17 +294,31 @@ display:inline-block;
 margin-right:9px;
     
 }
+#opt1,#opt2,#opt3,#opt4{
+    display:none;
+}
+
+.check{
+
+    border:2px solid black;
+    display:;
+    background-color:
+#FF7F50;
+    color:white;
+    margin-right:5px;
+}
+.next{
+    color:white;
+    border:2px solid black;
+    display:none;
+    background-color:#32CD32;
+    margin-right:5px;
+}
+#correctans{
+    display:block;
+    margin-left:40%;
+}
     </style>
-
-
-
-
-
-
-
-
-
-
 </head>
 <body>
       <div class="container" id="table">
@@ -350,9 +345,7 @@ margin-right:9px;
         
         
      <div class=" container" id="select">
-     <img src="http://www.cubitacademy.com/sites/default/files/cubit-logo.jpg" width="35%"class="img-thumbnail"/>
-     <br><br>
-
+     <img src="http://www.cubitacademy.com/sites/default/files/cubit-logo.jpg" width="40%"class="img-thumbnail"/>
      <h3>Pratice Multiplication table</h3>
      <br><br>
      <h5>&nbspselect number : </h5><input type="number" value="12" id="inp"></input><button class="btn btn-primary btn-lg plus" onclick="plus()">+</button><button class="btn btn-warning btn-lg minus" onclick="minus()">-</button>
@@ -375,6 +368,9 @@ margin-right:9px;
 
     <p id="qheight"><h4><b>Q</b><div id="quesno">01/</div><div id="tno">0</div></h4></p>
     <div class="well well-lg quo" id="quo">athul</div><br />
+ <p>Ans : <input type="number" id="ans">
+     <span id="correctans"></span>
+ </p>
         <div class="btn-group-vertical btn-block">
         <button onclick="pop(event)" value=1 class="btn btn-info opt1"id="opt1">v1</button>
         <button onclick="pop1(event)" value=2 class ="btn btn-info opt2"id="opt2">v2</button>
@@ -396,11 +392,9 @@ margin-right:9px;
 </div>
 
 
-     
-
-
 <script>
-function go(){
+    
+    function go(){
     document.getElementById('mainpart').style.display ='block'
 document.getElementById('select').style.display ='none'
 
@@ -442,7 +436,7 @@ abcd=document.getElementById("inp")
 
 
 a1=number
-b1=Math.floor(Math.random() *4) + 1
+b1=Math.floor(Math.random() *4) + 2
 c1=(Math.floor(Math.random() *10) + 1)
 s1=a1*b1
 
@@ -625,6 +619,10 @@ for(var i = 0; i < qd.length; i++){ qd[i].innerText=de[0];  }
    var audiof = new Audio('https://d1490khl9dq1ow.cloudfront.net/sfx/mp3preview/jg-032316-sfx-feedback-incorrect-25.mp3');
      
     
+   
+    
+    
+    
     
       //check option 
    
@@ -635,7 +633,7 @@ function myFunction(){
 y=document.getElementById("jumbotron");
 y.classList.remove("jumbo")
  
- document.getElementById('next').style.display = 'block'
+ document.getElementById('next').style.display = 'inline-block'
 document.getElementById('check').style.display = 'none'
  
  
@@ -719,30 +717,19 @@ var element = document.getElementById("opt2");
 var element = document.getElementById("opt3");
   element.classList.remove("btn-info");
     }
-    if(x3==4){
     
-    document.getElementById('box').style.borderColor = 'brown' 
-    var y=document.getElementById("wrong");
-   y.classList.add("false");
-    audiof.playbackRate =2;
-    audiof.play();
     
-         //$(".opt3").removeClass("btn-info");
-        // $(".opt3").addClass("btn-danger");
-var element = document.getElementById("opt3");
-  element.classList.remove("btn-info");
-var element = document.getElementById("opt3");
-  element.classList.add("btn-danger");
-       //  $(".opt2").removeClass("btn-info");
-        var element = document.getElementById("opt2");
-  element.classList.remove("btn-info"); 
-//$(".opt4").removeClass("btn-info");
-         }
-    var element = document.getElementById("opt4");
-  element.classList.remove("btn-info");
+    
     
    //if answer true 
-    if(x3==1){
+
+//aa is correct ans
+ aa=document.getElementById("opt1").innerHTML
+
+
+ans=document.getElementById("ans").value
+
+    if(aa==ans){
        var pos = 0; 
     document.getElementById('box').style.borderColor = 'green'   
        var y=document.getElementById("tick");
@@ -752,9 +739,19 @@ var element = document.getElementById("opt3");
         y2=y2+1
        // $("#sco").text((y2))
        document.getElementById("sco").innerHTML=y2
-    }
+    }else{
     
-
+    document.getElementById('box').style.borderColor = 'brown' 
+    var y=document.getElementById("wrong");
+   y.classList.add("false");
+    audiof.playbackRate =2;
+    audiof.play();
+    document.getElementById("correctans").innerHTML="Ans : "+ aa
+    
+         }
+         
+         
+         
  }
  n=2
     //$("#no").text(n)
@@ -766,7 +763,14 @@ var element = document.getElementById("opt3");
  
  
  
- 
+  //enter key to check
+    
+    $("#ans").keypress(function(event) {
+   if (event.which == 13) {
+        myFunction()
+        document.getElementById("next").focus(); 
+   }
+});
  
  
  
@@ -800,7 +804,9 @@ var element = document.getElementById("opt3");
 
    document.getElementById("next").addEventListener("click", next);
 function next(){
-
+document.getElementById("correctans").innerHTML=""
+document.getElementById("ans").focus();
+document.getElementById("ans").value=""
 
 
 y=document.getElementById("jumbotron");
@@ -817,7 +823,7 @@ y=document.getElementById("jumbotron");
    var y=document.getElementById("wrong");
    y.classList.remove("false");
    document.getElementById('next').style.display = 'none'
-document.getElementById('check').style.display = 'block'
+document.getElementById('check').style.display = 'inline-block'
    x1=document.getElementById("tex")
    x1.value=2
    nol=nol+1
@@ -1165,9 +1171,8 @@ function myFunction1(){
 }
 }
 
-
-
 </script>
+      
       
     </body>
 </html>
