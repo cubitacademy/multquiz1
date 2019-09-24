@@ -2,6 +2,7 @@
     <!DOCTYPE html>
 <html>
 <head>
+   
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-147749876-1"></script><script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-147749876-1');</script> 
 
 
@@ -11,16 +12,375 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<style>
+    
+    html{
+    height:100%;
+}
 
-<link rel="stylesheet" href="quiz.css">
+body{
+    height:100%;
+    /*background: rgba(80, 85,80, 0.4);*/
+    background-color:silver;
+   
+
+}
+
+#jumbotron{
+    position:relative  ;
+    padding:2%;
+    padding-right:3%;
+    padding-left:3%;
+    height:0%;
+    right:0%;
+}
+.jumbo{
+    animation-name:jumbo;
+    animation-iteration-count: 1;
+    animation-duration:.4s;
+    animation-fill-mode:forwards; 
+    animation-fill-mode: forwards;
+  }
+   @keyframes jumbo {
+    0% { right: 0%px; }
+    70%{ right:100%; }
+    71%{ right:-590%; }
+    100%{right:0%;}
+}
+
+  
+#cont{
+    padding-top:4px;
+}
+#container{
+    min-height:100%;  
+    max-height:100%;
+}
+.opt1:hover,.opt2:hover,.opt3:hover,.opt4:hover{
+    background-color:#337ab7;
+    color:white;
+    font-size:14px;
+}
+
+
+box {
+    border:3px  inset ;
+    border-color:grey;
+    
+    padding-top:15px;
+    padding-left:8px;
+    padding-right:10px;
+    padding-bottom:25px;
+}
+
+#pa{
+    background-color:#4056A1;
+    padding-top:20px;
+    padding-bottom:10px;
+    color:white;
+    font-size:15px;
+    weight:bold;
+}
+#sco{
+    background-color:#DAA520;
+}
+
+#tex,#no{
+    display:none;
+}
+
+.opt1,.opt2,.opt3,.opt4{
+padding:10px;
+weight:bold;
+border:1px solid black;
+}
+
+.opt1{
+    position:absolute ;
+    display:block;
+    top:145px;
+    
+}
+.opt2{
+    position:absolute  ;
+    top:-50px;
+}
+.opt3{
+    position:absolute  ;
+    top:-40px;
+}
+.opt4{
+    position:absolute ;
+    top:-28px;
+    
+}
+hr{
+    border-color:red;
+
+}
+
+ .next:hover,.check:hover{
+      color:white;
+     background-color:red;
+     padding-left:10px;
+    border:3px solid black;}
+
+    
+}
+
+.opt1:hover,.opt2:hover,.opt3:hover,.opt4:hover{
+    background-color:#337ab7;
+    color:white;
+    font-size:14px;
+}
+
+#box2{
+    
+    width: 110px;
+    height: 110px;
+    position: absolute;
+
+}
+#tick{
+    color:rgb(0, 200, 0);
+    font-size:33px;
+    transform: rotate(0deg);
+    position:absolute ;
+    top:99%;
+    right:800px ;
+    width:140px;
+    text-align:center ;
+    background-color:#DCDCDC;
+    
+}
+#wrong{
+    display:;
+    color:red;
+    top:99%;
+    font-size:34px;
+    transform: rotate(0deg);
+    position:absolute   ;
+    right:800px ;
+    width:140px;
+    text-align:center ;
+    background-color:#DCDCDC;
+}
+.true{
+    animation-name:true;
+    animation-iteration-count: 1;
+    animation-duration:.3s;
+    animation-fill-mode:forwards; 
+    animation-fill-mode: forwards;
+  }
+.false{
+    animation-name:true;
+    animation-iteration-count: 1;
+    animation-duration:.3s;
+    animation-fill-mode:forwards; 
+    animation-fill-mode: forwards;
+  }
+
+
+ @keyframes true {
+    from { right: 450px; }
+    to { right: 30%; }
+}
+
+
+/* Created by Sachin Jadhav */
+
+#loader {
+    margin-left: 46%;
+    margin-top:54%;  
+    fill: transparent;
+    stroke: #009688;
+    stroke-width: 5;
+    animation: dash 2s ease infinite,rotate 2s linear infinite;
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1,95;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 85,95;
+        stroke-dashoffset: -25;
+    }
+    100% {
+        stroke-dasharray: 85,95;
+        stroke-dashoffset: -93;
+    }
+}
+
+@keyframes rotate {
+    0% {transform: rotate(0deg); }
+    100% {transform: rotate(360deg); }
+}
+
+.quo{
+    border:2px solid black;
+}
+
+h4 b{
+    font-size:36px;
+    display:inline-block ;
+}
+#quesno{
+    display:inline-block ;
+}
+#tno{
+    display:inline-block ;
+}
+.showqs{
+    left:70%;
+}
+
+#countdowntimer{
+    display:inline-block ;
+    padding-right:2px;
+    position:absolute ;
+    color:orange;
+    font-size:25px;
+    border:1px solid black;
+    width:50px;
+    height:50px;
+    text-align:center ;
+    border-radius:50%;
+    left:80%;
+    padding-top:6px;
+    background-color:black;
+    
+}
 
 
 
+#select{
+background-color:rgb(250,250,250);
+margin:6px;
+padding:0;
+min-height:90%;
+ 
+}
+
+
+#table{
+    display:none;
+}
+#select>h3{
+    color:white;
+    text-align:center ;
+    background-color:#48466d;
+    padding:6px;
+    margin:0;
+}
+#select>h5{
+    display:inline-block;
+    margin-top:4px;
+}
+
+#inp{
+    width:50px;
+    margin:3px;
+    color:red;
+    font-size:16px;
+    
+}
+.plus{
+display:inline-block;
+margin:6px;
+ 
+}
+.minus{
+display:inline-block;
+margin-right:9px;
+    
+}
+#opt1,#opt2,#opt3,#opt4{
+    display:none;
+}
+
+.check{
+
+    border:2px solid black;
+    display:;
+    background-color:
+#FF7F50;
+    color:white;
+    margin-right:5px;
+}
+.next{
+    color:white;
+    border:2px solid black;
+    display:none;
+    background-color:#32CD32;
+    margin-right:5px;
+}
+#correctans{
+    display:block;
+    margin-left:40%;
+}
+.restart{
+    margin-left:52px;
+}
+.logo{
+    margin:6px;
+}
+
+#container{
+    display:;
+    background-color:white;
+}
+
+#result{
+    margin:8px;
+    display:none;
+    background-color:white;
+    padding:8px;
+    min-height:90%;
+}
+#fivestar,#fourstar,#threestar,#twostar,#onestar{
+    display:none;
+    font-size:4rem;
+}
+#comment{
+}
+
+h2{
+  color:#3ec1d3;    
+  text-align:center;
+}
+#cd{
+    color:#ff165d;
+    text-align:left;
+}
+.result>p{
+    background-color:#f6f7d7;
+    padding:6px;
+    font-weight:bold;
+    
+}
+#wronq>h5{
+    padding:3px;
+    letter-spacing:2px;
+    margin-left:4px;
+    font-weight:700px;
+}
+.lastb{
+    margin-top:18px;
+}
+
+.checkbox{
+    float:right;
+}
+#select{
+
+}
+
+</style>
 
 
 <body>
-
-
 <div id="container">
       <div class="container" id="table">
       <div class="jumbotron">
@@ -180,20 +540,6 @@ wrongq=[]
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function go(){
     document.getElementById('mainpart').style.display ='block'
 document.getElementById('select').style.display ='none'
@@ -272,6 +618,8 @@ b=Array()
 c=Array("")
 di=Array("")
 de=Array("none of these")
+b[0]=o[a1]
+di[0]=o[a1-1]
 
 
 
@@ -332,6 +680,9 @@ b[n]=alp[25-a9]
 n=9
 a[n]=alp[a10]
 b[n]=alp[25-a10]
+
+
+
 
 
 
@@ -410,11 +761,6 @@ for(var i = 0; i < qd.length; i++){ qd[i].innerText=de[0];  }
  //$(".check").on("click",function (){
  document.getElementById("check").addEventListener("click", myFunction);
 function myFunction(){
-
-
- 
- 
-
 y=document.getElementById("jumbotron");
 y.classList.remove("jumbo")
  
@@ -514,7 +860,7 @@ var element = document.getElementById("opt3");
 
 ans=document.getElementById("ans").value
 
-   if(aa==ans){
+    if(aa==ans){
        var pos = 0; 
     document.getElementById('box').style.borderColor = 'green'   
        var y=document.getElementById("tick");
@@ -523,10 +869,7 @@ ans=document.getElementById("ans").value
          audio.play();
         y2=y2+1
        // $("#sco").text((y2))
-      
-    document.getElementById("sco").innerHTML=y2
-    document.getElementById('ans').value = ''
-
+       document.getElementById("sco").innerHTML=y2
     }else{
     
     document.getElementById('box').style.borderColor = 'brown' 
@@ -544,10 +887,10 @@ wrongq.push(quo+"="+aa)
 
     
          }
-    
-    } 
-
- 
+         
+         
+         
+ }
  
 checkbox=document.getElementById("checkbox")
 
@@ -557,12 +900,10 @@ checkbox=document.getElementById("checkbox")
 
 // })
 if(aa==ans){
-document.getElementById("ans").value=""
 next() }
 
 if (checkbox.checked != true && aa != ans){
  next()
- document.getElementById("ans").value=""
  }
 
 }
@@ -576,10 +917,7 @@ if (checkbox.checked != true && aa != ans){
    if (event.which == 13) {
         myFunction()
         document.getElementById("next").focus(); 
-        document.getElementById("ans").value=""
    }
-   document.getElementById('ans').value =""
-   
 });
  
  
@@ -614,7 +952,6 @@ if (checkbox.checked != true && aa != ans){
 
    document.getElementById("next").addEventListener("click", next);
 function next(){
-
 document.getElementById("correctans").innerHTML=""
 document.getElementById("ans").focus();
 document.getElementById("ans").value=""
@@ -731,7 +1068,6 @@ document.getElementById("opt4").innerHTML=(i)
         
     }
     
-    
    //end of quiz 
     
     if(nol==no){
@@ -812,7 +1148,7 @@ if(at<=3 && at>2 && sc==10){
     
     
 }
-document.getElementById('ans').value =""
+
 
     }
     
@@ -821,7 +1157,6 @@ document.getElementById('ans').value =""
  
    //ques no change
 if(qno<no){
-document.getElementById('ans').value =""
 qno=qno+1
 qn=document.getElementById("quesno")
 qn.innerHTML=qno;}
@@ -1064,28 +1399,27 @@ function myFunction1(){
 }
 }
 
-
-
-
 function ansfunction(){
-
-
 sa=document.getElementById("ans").value.length
-
 sb=document.getElementById("opt1").innerHTML.length
 button=document.getElementById("check")
 if(sa==sb){
  
  
-setTimeout(function(){ button.click(); },);
+ setTimeout(function(){ 
+ button.click()
+  }, 200);
+ 
+ 
+ 
+ 
  
 }
-
-sa=document.getElementById("ans").value.length
 }
+
 
 
       </script>
-      
     </body>
 </html>
+
