@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+var w = window.innerWidth;
+var h = window.innerHeight;
+    alert(h)
     
     <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-147749876-1"></script><script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-147749876-1');</script> 
 
@@ -642,9 +645,7 @@ function setup(){
         }
     });
     */
-    var w = window.innerWidth;
-var h = window.innerHeight;
-    alert(h)
+    
     let canvas =createCanvas(h ,(h)*1.5);
     // let canvas =createCanvas(480 -16,(480-16) *1.5);
     paths = [];
