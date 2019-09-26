@@ -44,7 +44,6 @@
 body {
     position: fixed;
     color: #311B92;
-    width:100%;
 }
 .button{
     float: left;
@@ -645,6 +644,8 @@ function setup(){
 var h= screen.height;
 wi=window.innerHeight
 he=window.innerHeight=h;
+document.body.style.width =w+'px';
+document.body.style.height =h+'px';
     let canvas =createCanvas(w,h);
     // let canvas =createCanvas(480 -16,(480-16) *1.5);
     paths = [];
