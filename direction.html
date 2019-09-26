@@ -37,7 +37,6 @@
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
  </script>  
     </head>
-      
     <!--<body bgcolor = "#311B92">-->
     <style>
         
@@ -199,8 +198,8 @@ display:inline-block;
     <body>
   
     
-    <div class="container">
     
+    <div class="container">
     <div id="head">
     <h3>Direction Game</h3>
  <label>No of questions : </label>   <input type="text" id="ques" required value=4><br /><br />
@@ -349,7 +348,7 @@ display:inline-block;
          <button id="redo" class="button" type = "button">Redo</button>
      </div>
      </div>
-</div>
+     </div>
      <script>
          
 a=["north","south","east","west"]
@@ -646,8 +645,8 @@ function setup(){
     */
     var w = window.innerWidth;
 var h = window.innerHeight;
-    
-    let canvas =createCanvas(w -5,w);
+    alert(w)
+    let canvas =createCanvas(w -16,w-16*1.5);
     // let canvas =createCanvas(480 -16,(480-16) *1.5);
     paths = [];
     g = createGraphics(width, height);
@@ -820,4 +819,5 @@ function pop3(){
     </body>
     <br />
     <hr>
+
 </html>
