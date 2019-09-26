@@ -643,7 +643,9 @@ function setup(){
     });
     */
     var w = screen.width;
-var h = window.innerHeight;
+var h= screen.height;
+window.innerHeight=w;
+window.innerHeight=h;
     let canvas =createCanvas(w -16,w-16*1.5);
     // let canvas =createCanvas(480 -16,(480-16) *1.5);
     paths = [];
