@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+    
     <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-147749876-1"></script><script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-147749876-1');</script> 
 
     
@@ -41,7 +42,7 @@
         
 
 body {
-    overflow: hidden;
+    position: fixed;
     color: #311B92;
 }
 .button{
@@ -198,7 +199,7 @@ display:inline-block;
   
     
     
-    
+    <div class="container">
     <div id="head">
     <h3>Direction Game</h3>
  <label>No of questions : </label>   <input type="text" id="ques" required value=4><br /><br />
@@ -641,12 +642,9 @@ function setup(){
         }
     });
     */
-
-w=screen.width
-alert(w)
-
-    
-    let canvas =createCanvas(w-16 ,(w-16)*1.5);
+    var w = screen.width;
+var h = window.innerHeight;
+    let canvas =createCanvas(w -16,w-16*1.5);
     // let canvas =createCanvas(480 -16,(480-16) *1.5);
     paths = [];
     g = createGraphics(width, height);
@@ -819,5 +817,5 @@ function pop3(){
     </body>
     <br />
     <hr>
-
+</div>
 </html>
