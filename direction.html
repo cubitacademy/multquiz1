@@ -21,12 +21,11 @@
     
     
     
-        <title></title>
+        <title>Direction Game</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js" integrity="sha256-KDK3xm/GlUAv2dBVItuCM6jjCCtAVrjEfsdpcuMbN5M=" crossorigin="anonymous"></script>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js" integrity="sha256-a6uP+lfJTznPH4/eUqQFX3/sULwjHbfGtUjy8CWPooI=" crossorigin="anonymous"></script>
          <!-- Bootstrap CSS --> 
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
- <title></title>
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
  
   </head> <!-- Optional JavaScript --> <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
@@ -37,7 +36,7 @@
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
  </script>  
     </head>
-    <!--<body bgcolor = "#311B92">-->
+    
     <style>
         
 
@@ -195,8 +194,12 @@ display:inline-block;
 }
 
     </style>
-    <body>
     
+    
+      <div class="container-fluid">
+    <!--<body bgcolor = "#311B92">-->
+    <body>
+  
     
     
     
@@ -348,7 +351,7 @@ display:inline-block;
          <button id="redo" class="button" type = "button">Redo</button>
      </div>
      </div>
-     <script>
+     <style>
          
 a=["north","south","east","west"]
 b=["right","left"]
@@ -642,7 +645,10 @@ function setup(){
         }
     });
     */
-    let canvas =createCanvas(displayWidth -16,(displayWidth-16) *1.5);
+    var w = window.innerWidth;
+var h = window.innerHeight;
+    
+    let canvas =createCanvas(w -5,w);
     // let canvas =createCanvas(480 -16,(480-16) *1.5);
     paths = [];
     g = createGraphics(width, height);
@@ -810,8 +816,10 @@ function pop3(){
 
 
 
-     </script>
+
+     </style>
     </body>
     <br />
     <hr>
+</div>
 </html>
