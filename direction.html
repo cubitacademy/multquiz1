@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
     
     <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-147749876-1"></script><script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-147749876-1');</script> 
 
@@ -658,15 +660,15 @@ function setup(){
 var h= screen.height;
 wi=window.innerHeight
 he=window.innerHeight=h;
-document.body.style.width =wi+'px';
-document.body.style.height =he+'px';
+document.body.style.width =w+'px';
+document.body.style.height =h+'px';
 
 //document.getElementById("body").focus();
 
 
 
 
-    let canvas =createCanvas(we,hi);
+    let canvas =createCanvas(w,h);
     // let canvas =createCanvas(480 -16,(480-16) *1.5);
     paths = [];
     g = createGraphics(width, height);
@@ -836,6 +838,7 @@ function pop3(){
 
 
      </script>
+</div>
 </div>
     </body>
     <br />
