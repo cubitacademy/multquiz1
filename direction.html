@@ -46,7 +46,6 @@
 body {
     position: fixed;
     color: #311B92;
-    width:100%;
     overscroll-behavior: none;
 }
 .button{
@@ -129,8 +128,8 @@ padding-top: 4px;
      border-radius:16px;
   } 
 .jumbotron{
-    margin:0;
-    padding:10px;
+    margin-top:5px;
+    padding:15px;
 
 }
 .sub{
@@ -146,6 +145,7 @@ padding-top: 4px;
 }
 #mainpart{
     display:none;
+    
 }
 
 #head{
@@ -186,15 +186,18 @@ h3{
 }
 
 .opt1,.opt2,.opt3,.opt4{
-    margin:0
-    margin-bottom:8px;
+    margin:0;
+    margin-bottom:15px;
+}
+
+#mainpart{
+    margin-top:20px;
+    text-align:center;
 }
 
 #options{
     display:none;
-    padding:2px;
- 
-
+    padding:4px;
 }
 
 #comment{
@@ -230,7 +233,7 @@ display:inline-block;
     
     <div id="result">
 
-    <div class=" result">
+    <div class="container result">
          <h2>Result</h2>
          <hr>
          
@@ -355,7 +358,14 @@ display:inline-block;
          <button id="redo" class="button" type = "button">Redo</button>
      </div>
      </div>
-     <script>
+
+
+     
+</div>
+</div>
+<script>
+    
+     
          
 a=["north","south","east","west"]
 b=["right","left"]
@@ -666,8 +676,8 @@ function setup(){
 var h= screen.height;
 wi=window.innerHeight
 he=window.innerHeight=h;
-//document.body.style.width =w+'px';
-//document.body.style.height =h+'px';
+document.body.style.width =w+'px';
+document.body.style.height =h+'px';
 
 //document.getElementById("body").focus();
 
@@ -841,11 +851,7 @@ function pop3(){
 }
 
 
-
-
-     </script>
-</div>
-</div>
+</script>
     </body>
     <br />
     <hr>
