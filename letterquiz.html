@@ -1,5 +1,4 @@
 
-
     <!DOCTYPE html>
 <html>
 <head>
@@ -8,30 +7,12 @@
 <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-147749876-1');</script> 
 
 
-
-
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-3048433912865617",
-          enable_page_level_ads: true
-     });
-</script>
-
-
-
-
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-
-
 <style>
     html{
     height:100%;
@@ -393,13 +374,10 @@ h2{
     float:right;
 }
 #select{
-
+display:none;
 }
 
 </style>
-
-
-
 <body>
 <div id="container">
       <div class="container" id="table">
@@ -452,7 +430,7 @@ h2{
  <label><input type="checkbox" id="checkbox">show answers</label></div>
    </h4>
     </p>
-    <div class="well well-lg quo" id="quo">athul</div><br />
+    <div class="well well-lg quo" id="quo">loading..</div><br />
  <p>Ans : <input type="number" id="ans" onkeyup="ansfunction()">
      <span id="correctans"></span>
  </p>
@@ -553,9 +531,7 @@ h2{
 <input type="button" class="lastb btn btn-success"value="Restart" onClick="location.href=location.href">
      </div>
       </div>
-      
       <script>
-          
           
 wrongq=[]
 
@@ -574,7 +550,10 @@ abcd=document.getElementById("inp")
 mainpart()
     }
     
-  window.setTimeout(go, 2);
+  setTimeout(function(){
+go()
+ }, 2000);
+
   
     
 
@@ -620,7 +599,7 @@ d=alp[c]+alp[25-c] //with reverse pair
 i=0
 
 
-a10=Math.floor(Math.random() *3) + 0 //0 to 2
+a0=Math.floor(Math.random() *3) + 0 //0 to 2
 a8=Math.floor(Math.random() *3) + 3 // 3 to 5
 a4=Math.floor(Math.random() *3) + 6 // 6 to 8
 a3=Math.floor(Math.random() *3) + 9 // 9 to 11
@@ -630,8 +609,6 @@ a1=Math.floor(Math.random() *3) + 18 // 18 to 20
 a5=Math.floor(Math.random() *2) + 21 // 21 to 22
 a6=23
 a9=Math.floor(Math.random() *2) + 24
-
-
 
 
 
@@ -689,8 +666,10 @@ b[n]=o[a9]
 
 
 n=9
-a[n]=alp[a10]
-b[n]=o[a10]
+a[n]=alp[a0]
+b[n]=o[a0]
+
+
 
 
 
@@ -912,16 +891,6 @@ if (checkbox.checked != true && aa != ans){
  next()
  }
 
-
-
-setTimeout(function(){ 
-document.getElementById("ans").value=""
-}, 400);
-
-
-
-
-
 }
 
  
@@ -970,7 +939,7 @@ document.getElementById("ans").value=""
 function next(){
 document.getElementById("correctans").innerHTML=""
 document.getElementById("ans").focus();
-
+document.getElementById("ans").value=""
 
 
 y=document.getElementById("jumbotron");
@@ -1421,11 +1390,7 @@ sb=document.getElementById("opt1").innerHTML.length
 button=document.getElementById("check")
 if(sa==sb){
  
-
-
  button.click()
- 
-
 }
 }
 
