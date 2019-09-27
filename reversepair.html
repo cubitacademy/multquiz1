@@ -1,24 +1,11 @@
 
+
     <!DOCTYPE html>
 <html>
 <head>
 
-
-
-    <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-147749876-1"></script>
+!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-147749876-1"></script>
 <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-147749876-1');</script> 
-
-
-
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-3048433912865617",
-          enable_page_level_ads: true
-     });
-</script>
 
 
 
@@ -33,7 +20,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <style>
-    html{
+   html{
     height:100%;
 }
 
@@ -395,7 +382,7 @@ h2{
 #select{
 
 }
-
+ 
 </style>
 <body>
 <div id="container">
@@ -437,7 +424,7 @@ h2{
  <label><input type="checkbox" id="checkbox">show answers</label></div>
    </h4>
     </p>
-    <div class="well well-lg quo" id="quo">athul</div><br />
+    <div class="well well-lg quo" id="quo">loading...</div><br />
  <p>Ans : <input type="text" id="ans" onkeyup="ansfunction()">
      <span id="correctans"></span>
  </p>
@@ -538,9 +525,8 @@ h2{
 <input type="button" class="lastb btn btn-success"value="Restart" onClick="location.href=location.href">
      </div>
       </div>
-      
-    <script>
-
+      <script>
+          
 wrongq=[]
 
 function go(){
@@ -553,8 +539,10 @@ function go(){
 mainpart()
     }
     
+setTimeout(function(){
+go()
+ }, 2000);
 
-  window.setTimeout(go, 5);
 
   
     
@@ -1421,6 +1409,8 @@ if(sa==sb){
 }
 
 
-</script>
+
+      </script>
+    
     </body>
 </html>
