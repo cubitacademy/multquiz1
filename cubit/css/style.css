@@ -1,0 +1,28 @@
+.container-fluid{
+padding: 25px;
+background-color:rgb(210,210,210);
+}
+.tense{
+  background-color:rgb(210,210,210);
+}
+
+
+.card{
+  margin-bottom: 16px;
+}
+h1{
+  text-align: center;
+}
+
+
+
+
+@media (max-width: 800px) {
+.logo{
+width:20%;
+}
+.card{
+margin: auto;
+margin-bottom: 16px;
+}
+}
