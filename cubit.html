@@ -7,11 +7,23 @@
   -->
 
   <meta charset="utf-8">
+  <meta name="description" content="Bank exam helper">
+  <meta name="keywords" content="Multiplication Tables,Reasoning,Square,Direction,letter Count,Reverse Pair,a list of multiplication tables,a multiplication table game">
+  <meta name="author" content="Athul jacob cubitacademy,Direction">
+
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>Cubit</title>
+
+<link rel="icon" type="image/png" sizes="16x16" href="images/android-chrome-192x192.png">
+  <title>Cubit | speed up your calculations</title>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
+
+
 
 </head> <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -23,15 +35,15 @@
 </script>
 
 <link rel="stylesheet" href="css/style.css">
-<style media="screen">
-body{
 
-}
+
+<style >
 
 
 .container-fluid{
-padding: 25px;
-background-color:rgb(210,210,210);
+background-color:rgb(240,240,240);
+margin:0;
+padding:4px;
 }
 .tense{
   background-color:rgb(210,210,210);
@@ -43,8 +55,58 @@ background-color:rgb(210,210,210);
 }
 h1{
   text-align: center;
+  color: white;
+  padding: 50px;
 }
 
+.navbar{
+  background-color: #34495e;
+}
+.quizsection{
+  margin-top:80px;
+  border:2px solid #700961;
+}
+.quizsection>h1{
+  margin:0;
+  padding:8px;
+  background-color: #700961;
+  margin-bottom:5px;
+
+}
+
+.referencesection{
+  margin-top:50px;
+  border:2px solid #b80d57;
+}
+.referencesection>h1{
+  margin:0;
+  padding:8px;
+  background-color: #b80d57;
+  margin-bottom:5px;
+
+}
+.tensesection{
+  margin-top:50px;
+  border:2px solid #e03e36;
+}
+.tensesection>h1{
+  margin:0;
+  padding:8px;
+  background-color: #e03e36;
+  margin-bottom:5px;
+}
+
+
+/* sub heading of tenses */
+.whichtense{
+  margin:10px;
+  text-align:left;
+  color: black;
+  padding:0;
+}
+h2{
+  text-align:center;
+}
 
 
 
@@ -54,18 +116,21 @@ width:20%;
 }
 
 .container-fluid{
-padding:14px;
-background-color:rgb(210,210,210);
+background-color:rgb(240,240,240);
+padding:0;
+}
+.col-6{
+  padding:0;
+  margin-right:-5px;
 }
 
 .card{
-margin:3px;
-padding:0;
+  margin-right:10px;
+  margin-left:20px;
+  padding:0;
 min-height:180px;
 }
-.col-6{
-  padding:3px;
-}
+
 .mobile{
   display:none;
 }
@@ -73,9 +138,11 @@ min-height:180px;
 
 </style>
 
+
+
 <body>
 
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <nav class="navbar fixed-top  navbar-expand-md navbar-dark">
     <!-- Brand -->
     <img src="http://www.cubitacademy.com/sites/default/files/cubit-logo.jpg" width="7%" class="img-thumbnail logo" />
 
@@ -91,13 +158,13 @@ min-height:180px;
           <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Quiz</a>
+          <a class="nav-link" href="#quiz">Quiz</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Reference</a>
+          <a class="nav-link" href="#reference">Reference</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tense</a>
+          <a class="nav-link" href="#tenses">Tenses</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact / Feedback</a>
@@ -120,20 +187,22 @@ min-height:180px;
 
 
 
+<div id="quiz" class="quizsection">
 
 <h1 style="text-align:center">Quiz Section</h1>
-<br>
     <div class="row">
       <div class="col-sm-4 col-6">
-        <div class="card">
+        <div class="card ">
           <div class="card-body">
-            <h5 class="card-title">Pratice Multiplication -Table</h5>
+            <h5 class="card-title">Free Practice Multiplication -Table</h5>
             <ul class='mobile'>
               <li>Builds Confidence in Mathematics..</li>
               <li>Skill for Long Multiplication and Division...</li>
               <li>Improve Problem-Solving Abilities</li>
+              <li>best way to practice multiplication tables</li>
+
             </ul>
-            <a href="/multiplication.html" class="btn btn-primary">Pratice Table</a>
+            <a href="/multiplication.html" class="btn btn-primary">Practice Table</a>
           </div>
         </div>
       </div>
@@ -145,6 +214,7 @@ min-height:180px;
             <ul class='mobile'>
               <li>Builds Confidence in Mathematics..</li>
               <li>Improve Problem-Solving Abilities</li>
+            <li>best way to practice square of numbers </li>
             </ul>
             <a href='/square.html' class="btn btn-primary">Pratice</a>
           </div>
@@ -159,6 +229,7 @@ min-height:180px;
             <ul class='mobile'>
               <li>Increase the speed of finding diection</li>
               <li>Draw through the canvas and find direction</li>
+              <li>best way to practice Direction questions</li>
             </ul>
             <a href= '/direction.html' class="btn btn-danger">Start</a>
           </div>
@@ -172,7 +243,8 @@ min-height:180px;
 
       <ul class='mobile'>
         <li>To study about English alphabets</li>
-        <li>Helpful in resoning</li>
+        <li>Helpful in reasoning</li>
+            <li>best way to study english alphabets count</li>
         <li>A=1 and z=26</li>
       </ul>
       <a href= '/letterquiz.html' class="btn btn-success">Take Quiz</a>
@@ -187,7 +259,8 @@ min-height:180px;
 
       <ul class='mobile'>
         <li>To study about English alphabets</li>
-        <li>Helpful in resoning</li>
+        <li>Helpful in reasoning</li>
+      <li>best way to practice reverse pair</li>
         <li>a=z</li>
       </ul>
       <a href= '/reversepair.html' class="btn btn-success">Take Quiz</a>
@@ -198,11 +271,15 @@ min-height:180px;
 
 
 
+</div>
 
-<!-- letter count -->
-<br><br><br>
-<h1 style="text-align:center">Reference</h1>
+
+
+<!-- reference -->
 <br>
+<div id="reference" class="referencesection">
+<!-- letter count -->
+<h1 style="text-align:center">Reference</h1>
 <div class="row">
 <div class="col-sm-4">
   <div class="card">
@@ -252,19 +329,41 @@ min-height:180px;
     </div>
 
 
-<br><br><br>
+
+  </div>
+
+<hr>
+<div class="tensesection" id='tenses'>
+
     <h1>Tenses</h1>
-    <div class="tense">
-
-
-    <br>
 
 <!-- simple present -->
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Simple Present</h5>
+<div class="card mb-3" >
+  <div class="row no-gutters">
+
+
+
+
+          <div class="sidebar col-md-2 text-white bg-secondary mb-3">
+            <div class="card-body ">
+              <h5 class="card-title">Tenses</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+    <div class="post col-md-8   mb-3">
+      <h1 class="whichtense">Present Tense</h1>
+      <div class="container">
+
+                <h2>simple Present</h2>
                 <table class="table table-bordered">
                   <thead>
                     <tr>
@@ -286,14 +385,14 @@ min-height:180px;
                 <h5>Uses</h5>
                 <ul>
                   <li> If a sentence starts with here/there</li>
-                  <div id="example" >Here,we write grammer</div>
+                  <div id="example" >Here,we write grammar</div>
                   <li>To denote a Habitual Action</li>
                   <div id="example" >I attend Classes thrice a week</div>
                   <li>To denote Universal truth</li>
                   <div id="example" class="hide">The sun rises in the east</div>
                   <li> To denote general fact</li>
                   <div id="example" >Cow eat grass</div>
-                  <li> To denote possesion,belongings and ownerships</li>
+                  <li> To denote possession,belongings and ownerships</li>
                   <div id="example" >She belongs to me</div>
                 </ul>
 
@@ -301,16 +400,37 @@ min-height:180px;
               <a href="/multiplication.html" class="btn btn-dark">Read More ...</a>
                 </div>
               </div>
+
+
+
+
+
+
+                    <div class="sidebar col-md-2 bg-light mb-3">
+                      <div class="card-body ">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+
+
+
+
+
+
             </div>
+          </div>
 
 
 
 <!-- present continuous -->
 
             <div class="col-sm-6">
+              <h2 class="card-title">Present Continuous</h1>
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Present Continous</h5>
+
                   <div class="form">Subject &nbsp+ &nbsp is/am/are &nbsp + &nbsp verb+ing</div><br />
 
 
@@ -408,7 +528,7 @@ min-height:180px;
 
 
 
-<!-- present perfect continous -->
+<!-- present perfect continuous -->
 
             <div class="col-sm-6">
               <div class="card">
@@ -445,9 +565,9 @@ min-height:180px;
 
                   <h5>Uses</h5>
                   <ul>
-                    <li> To denote an action that started in past and still going on.The only difference b/w present continous and presenr perfect continous is in a use of time with ' since and for ' <br />(time mention ചെയണം)</li>
-                    <div id="example" class="hide">We are studying grammer --present continuous<br />
-                      <h7> we have been studying grammer since 9:30 am <br /> we have been studying grammer for one hour. --present perfect continuous</h7>
+                    <li> To denote an action that started in past and still going on.The only difference b/w present continuous and presenr perfect continuous is in a use of time with ' since and for ' <br />(time mention ചെയണം)</li>
+                    <div id="example" class="hide">We are studying grammar --present continuous<br />
+                      <h7> we have been studying grammar since 9:30 am <br /> we have been studying grammar for one hour. --present perfect continuous</h7>
                     </div>
 
                   </ul>
@@ -456,13 +576,11 @@ min-height:180px;
                 </div>
               </div>
             </div>
-
-
-
-
-
-
           </div>
+
+
+
+<!-- SECTION CLOSe -->
 </div>
 
 
