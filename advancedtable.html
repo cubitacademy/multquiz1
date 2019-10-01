@@ -1,0 +1,635 @@
+<!doctype html>
+<html ng-app lang="en">
+
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-147749876-1"></script><script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-147749876-1');</script> 
+
+
+ 
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Cubit</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+</head> <!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+
+
+
+
+<link rel="stylesheet" href="css/style.css">
+
+
+
+<style>
+    body {
+    
+}
+.sco{
+    float:left;
+    display:inline-block;
+}
+.score{
+    margin:0;
+    margin-top:5px;
+    margin-right:5px;
+}
+.card-body{
+    border:1px solid black;
+    padding:0;
+}
+.card-header{
+    background-color:#4056A1;
+    color:rgb(230,230,230);
+}
+.restart{
+    margin:14px;
+}
+h5{ 
+    line-height:3;
+    letter-spacing:2px;
+    font-weight:400;
+}
+.navbar{
+    background-color:#4056A1;
+}
+.quesno{
+     position:relative;
+    float:left;
+}
+h1{
+    font-size:1.2rem;
+    margin:0;
+    margin-top:4px;
+    text-align:center;
+    color:rgb(190,190,190);
+    
+}
+.card-title{
+    margin:0;
+}
+.timer{
+    float:right;
+    border-radius:50%;
+}
+
+
+
+#result{
+    margin:8px;
+    display:none;
+    background-color:white;
+    padding:8px;
+    min-height:90%;
+}
+#fivestar,#fourstar,#threestar,#twostar,#onestar{
+    display:none;
+    font-size:2rem;
+}
+
+h4{
+    font-weight:400;
+    line-height:1.5;
+    letter-spacing:2px;
+    font-size:1.2rem;
+}
+
+#quizsection{
+    display:none;
+}
+#alert{
+    display:none;
+}
+</style>
+
+
+<body>
+  <nav class="navbar navbar-expand-md  navbar-dark bg-dark">
+    <!-- Brand -->
+    <img src="http://www.cubitacademy.com/sites/default/files/cubit-logo.jpg" width="7%" class="img-thumbnail logo" />
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Quiz</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Reference</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tense</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact / Feedback</a>
+        </li>
+      </ul>
+    </div>
+    </nav>
+
+
+
+<div class ="container">
+
+
+
+<br />
+
+<div id="selectsection">
+    <form> 
+   <div class="form-group"> 
+  <label for="whichnumber">Which Number :</label> <input type="number" class="form-control" id="whichnumber" aria-describedby="emailHelp" placeholder="Enter number" value=12><small id="emailHelp" class="form-text text-muted">Enter the number which you want to take quiz</small> </div>
+    
+    
+    <div class="form-group"> <label for="upto">Upto: </label> <input type="number" class="form-control" id="upto" aria-describedby="emailHelp" value=25
+ ng-model="upto" ng-init="upto=25"    placeholder="Enter number"> <small id="emailHelp" class="form-text text-muted">The question will ask upto this number </small> </div>
+    
+    
+    
+    
+    <div class="form-group"> <label for="start">Start from: </label>
+    <input type="number" value=0 ng-model="startfrom" ng-init="startfrom=0" class="form-control" id="start" aria-describedby="emailHelp" placeholder="Enter number"  required  > <small id="emailHelp" class="form-text text-muted">Question is between {{startfrom}} and {{upto}}, there are ten questions so maximum start value should be upto {{upto-10}}</small> </div>
+     
+    
+    <div id="alert" class="alert alert-danger" role="alert"> Start from value must less than or equal to {{upto-10}} </div>
+
+    
+    
+<button class="btn btn-success"onclick="go()"> Go</button>
+
+
+
+    </form>
+    
+    
+    
+    <br />
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+<div id="quizsection">
+
+
+<h1>Practice multiplication table</h1>
+
+<div class="card text-center">
+  <div class="card-header bg-info mb-3">
+  <label class="score sco">Sco: </label><button class="btn btn-warning sco " id="sco">0</button>
+   
+ <button id="countdowntimer" class="btn btn-lg btn-secondary timer"><span style="font-size:.8rem">0</span></button>   
+    
+  </div>
+  
+  
+  <div class="card-body border-dark mb-3">
+
+
+<div class="container">
+
+<p class="quesno"><b style="font-size:1.5rem;">Q </b><span id="quesno">1</span><span id="tno">/10</span></p>
+    <br />
+
+    <h5 class="card-title" id="quo">loading...</h5>
+<br />
+
+
+</div>
+
+
+  </div>
+
+
+  <div class="card-footer" >    
+    <p>Ans : <input type="number" id="ans" onkeyup="ansfunction()" class="card-input">
+   <span id="correctans"></span>
+</p>
+<br />
+  </div>
+</div>
+<center>
+<button class="btn btn-outline-dark restart" onclick="next()">Restart</button>
+
+</center>
+
+
+
+
+
+
+</div>
+
+
+
+<div id="result">
+     <div class="container result">
+         <h2>Result</h2>
+         <p id="finalscore"></p>
+         <p id="avgtime"></p>
+         <p id="comment"></p>
+         
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: orange;
+}
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: orange;
+}
+</style>
+
+<div id="fivestar">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+</div>
+
+
+<div id="fourstar">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+</div>
+
+
+<div id="threestar">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+
+<div id="twostar">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+
+<div id="onestar">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+
+
+<br />
+
+<h2 id="cd">Correct answers</h2>
+<div id="wronq">
+    
+</div>
+
+<input type="button" class="lastb btn btn-success"value="Restart" onClick="location.href=location.href">
+     </div>
+      </div>
+
+
+
+
+</div>
+<script>
+    function randomNumbers(max) { 
+function range(upTo) {
+ var result = [];
+  for(var i = 0; i < upTo; i++)
+   result.push(i); return result;
+    }
+    function shuffle(o){
+     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x); 
+     return o; }
+      var myArr = shuffle(range(max));
+       return function() {
+        return myArr.shift(); }; }
+
+
+
+//no edit above
+function go(){
+   
+   
+   
+   
+   
+ // validating   
+   start=document.getElementById("start").value
+upto=document.getElementById("upto").value
+
+c=upto-10
+
+   if(start>=c+1){
+document.getElementById("alert").style.display="block"
+}else{
+   
+   
+ var randoms = randomNumbers(upto), 
+rand = randoms(),
+ result = [];
+  while(rand != null) {
+   result.push(rand); rand = randoms();
+    } 
+   // console.log(result);
+
+// filter array
+function remove(num) {
+  return num >= start;
+}
+
+a=[];
+b=[];
+multiplicationnumber=document.getElementById("whichnumber").value
+
+
+arrayA=(result.filter(remove))
+arrayA.forEach(function(A){
+    a.push(A+"×"+multiplicationnumber);
+    b.push(A*multiplicationnumber);
+})  
+   
+   
+   
+   
+   
+   question()
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    document.getElementById("alert").style.display="none";
+document.getElementById("selectsection").style.display="none";
+
+document.getElementById("quizsection").style.display="block"
+//closing of else  
+}
+
+var timeleft = 0; var downloadTimer = setInterval(function(){ timeleft++; document.getElementById("countdowntimer").textContent = timeleft; },1000);
+   
+   
+    
+}
+
+
+
+
+
+
+
+
+i=0;
+//a=[];
+//b=[];
+wrongq =[];
+//total ques;
+
+tno=9;
+no=10;
+sco=0;
+x= Math.floor(Math.random() * 10) +1;
+x1=Math.floor(Math.random() * 7) +3;
+x2=Math.floor(Math.random() * 7) +3;
+//a.push(x+"+"+x1+"+"+x2);
+//b.push(x+x1+x2);
+
+
+
+
+
+
+
+
+
+   var audio = new Audio('https://d1490khl9dq1ow.cloudfront.net/sfx/mp3preview/jg-032316-sfx-feedback-correct-17.mp3');
+   var audiof = new Audio('https://d1490khl9dq1ow.cloudfront.net/sfx/mp3preview/jg-032316-sfx-feedback-incorrect-25.mp3');
+
+
+
+
+
+
+
+
+
+function finished(){
+           
+ //clearInterval(downloadTimer);       
+      
+      
+      wrongq.forEach(function(q){  
+   
+var para = document.createElement("h4");
+var node = document.createTextNode(q);
+para.appendChild(node);
+var element = document.getElementById("wronq");
+element.appendChild(para);
+   
+   });     
+         
+      
+      
+      
+       document.getElementById('quizsection').style.display ="none"
+sc=document.getElementById("sco").innerHTML
+ti=document.getElementById("countdowntimer").innerHTML
+document.getElementById('result').style.display ="block"
+
+document.getElementById('finalscore').innerHTML="score:" +sc;
+document.getElementById('avgtime').innerHTML="average time /question :" +ti/no +"s";
+
+at=ti/no
+
+if(sc==no){
+document.getElementById("cd").innerHTML=""
+}
+
+if( sc==9 || sc==10 ){
+    document.getElementById("comment").innerHTML="comment : good "
+    document.getElementById('threestar').style.display= 'block'
+    
+}
+if(sc==8){
+   document.getElementById("comment").innerHTML="comment: average" 
+   document.getElementById('twostar').style.display= 'block'
+   
+   document.getElementById('threestar').style.display= 'none'
+  document.getElementById('fourstar').style.display= 'none'
+  document.getElementById('fivestar').style.display= 'none'
+   
+}
+if(sc<=7){
+    document.getElementById("comment").innerHTML="comment: kid"
+    
+    document.getElementById('onestar').style.display= 'block'
+    
+    document.getElementById('threestar').style.display= 'none'
+  document.getElementById('fourstar').style.display= 'none'
+  document.getElementById('twostar').style.display= 'none'
+    
+    
+    
+}
+
+if(at<=2 && sc==10){
+document.getElementById("comment").innerHTML="comment : proffesional"
+document.getElementById('fivestar').style.display= 'block'
+
+
+document.getElementById('threestar').style.display= 'none'
+  document.getElementById('twostar').style.display= 'none'
+  document.getElementById('onestar').style.display= 'none'
+
+
+
+}
+if(at<=3 && at>2 && sc==10){
+    document.getElementById("comment").innerHTML="comment : very good"
+    document.getElementById('fourstar').style.display= 'block'
+    
+    document.getElementById('threestar').style.display= 'none'
+  document.getElementById('onestar').style.display= 'none'
+  document.getElementById('fivestar').style.display= 'none'
+    
+    
+}
+
+    
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+function question(){
+document.getElementById('quo').innerHTML=a[i];
+
+//document.getElementById("quesno").innerHTML=i+1;
+
+}
+
+function check(){
+
+x1=Math.floor(Math.random() * 7) +3;
+x2=Math.floor(Math.random() * 7) +3;
+ans=document.getElementById("ans").value;
+  if(ans==b[i]){
+  audio.playbackRate =3;
+    audio.play();
+  sco=sco+1
+    document.getElementById("sco").innerHTML=sco;
+  }else {
+     audiof.playbackRate =3;
+    audiof.play();
+      wrongq.push(a[i]+"="+b[i]);
+  }
+
+
+  if(tno==i){
+      finished();
+  }else{
+      nextq();
+  }
+
+
+}
+
+
+
+function ansfunction(){
+
+sa=document.getElementById("ans").value.length;
+answer=b[i].toString();
+sb=answer.length;
+if(sa==sb){
+
+  check ();
+}
+}
+
+function nextq(){
+
+i=i+1
+document.getElementById('quo').innerHTML=a[i];
+document.getElementById("ans").value="";
+
+ document.getElementById("quesno").innerHTML=i+1;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<script src="js/add.js" charset="utf-8"></script>
+</body>
+</html>
