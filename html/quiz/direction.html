@@ -1,0 +1,859 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-147749876-1"></script><script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-147749876-1');</script>
+
+
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3048433912865617",
+          enable_page_level_ads: true
+     });
+</script>
+
+
+
+
+
+
+        <title></title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js" integrity="sha256-KDK3xm/GlUAv2dBVItuCM6jjCCtAVrjEfsdpcuMbN5M=" crossorigin="anonymous"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js" integrity="sha256-a6uP+lfJTznPH4/eUqQFX3/sULwjHbfGtUjy8CWPooI=" crossorigin="anonymous"></script>
+         <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="icon" type="image/png" sizes="16x16" href="images/android-chrome-192x192.png">
+ <title>Direction  game</title>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  </head> <!-- Optional JavaScript --> <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+ </script>
+    </head>
+    <!--<body bgcolor = "#311B92">-->
+    <style>
+
+
+body {
+    position: fixed;
+    color: #311B92;
+    overscroll-behavior: none;
+}
+.button{
+    float: left;
+    background-color:#2979FF;
+    color:#fff;
+    border-radius: 12px;
+    width: 70px;
+    border: 3px solid #82B1FF;
+    display: inline;
+    font-size: 10px;
+    margin:2px;
+    height: 28px;
+    padding: 0;
+    outline: none !important;
+    box-shadow: 0 5px 0 #0001;
+}
+.cs{
+    margin-top:5px;
+}
+.header{
+    padding-bottom: 4px;
+    display:inline-block;
+    width:100%;
+}
+.colorPicker{
+    height:30px;
+    width:30px;
+}
+.col{
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+}
+#hsv{
+    display:inline-block;
+}
+#reset{
+    float:right;
+    background-color: #BF360C;
+    border-color: #FF6E40;
+}
+#pick{
+    background-color: #BA68C8;
+    color:#fff;
+    border-color: #fff;
+    margin-right: 16px;
+}
+
+.button:active{
+    box-shadow: 0 4px 0 #0001;
+    transform:translateY(1px);
+}
+
+.rangeslider{
+display: inline-block;
+height:25px;
+padding-top: 4px;
+ }
+
+.myslider {
+ -webkit-appearance: none;
+  background: #2979FF ;
+  width: 160px;
+  height: 5px;
+  vertical-align:middle;
+  }
+#undoSlider{
+    width: 100px;
+}
+
+ .myslider::-webkit-slider-thumb { -webkit-appearance: none;
+  cursor: pointer;
+   /*background: #34495E ;*/
+    background:#fff;
+    width: 16px;
+     height: 16px;
+     border-radius:16px;
+  }
+.jumbotron{
+    margin-top:5px;
+    padding:15px;
+
+}
+.sub{
+    color:green;
+}
+.mystyle{
+    color:blue;
+}
+.timer{
+    float:right;
+    boder-radius:100%;
+    display:none;
+}
+#mainpart{
+    display:none;
+
+}
+
+#head{
+
+    padding:35px;
+    padding-top:8px;
+    border:2px solid black;
+    margin:5px;
+    margin-bottom:25px;
+}
+.go{
+    display:block ;
+    margin-top:10px;
+}
+
+h3{
+    color:orange;
+    text-align:center;
+    margin:15px;
+    margin-left:0;
+
+
+
+}
+
+#result{
+    margin:8px;
+    display:none;
+    background-color:white;
+    padding:8px;
+    min-height:90%;
+    border:2px solid black;
+}
+#fivestar,#fourstar,#threestar,#twostar,#onestar{
+    display:none;
+    font-size:1.2rem;
+    margin-bottom:12px;
+}
+
+.opt1,.opt2,.opt3,.opt4{
+    margin:0;
+    margin-bottom:15px;
+}
+
+#mainpart{
+    margin-top:20px;
+    text-align:center;
+}
+
+#options{
+    display:none;
+    padding:4px;
+}
+
+#comment{
+font-weight:600px;
+display:inline-block;
+}
+
+    </style>
+    <body>
+<div id="body">
+
+
+    <div id="head">
+    <h3>Direction Game</h3>
+ <label>No of questions : </label>   <input type="text" id="ques" required value=4><br /><br />
+ <label>Time for one question (sec) :</label><input type="text" id="time" placeholder="in seconds" value="4">
+ <button class="btn btn-success go" onclick="go()">Go</button>
+    </div>
+
+
+
+
+    <div id="options">
+    <br />
+    <h3>Click the correct option</h3>
+    <br />
+    <div class="btn-group-vertical btn-block">
+        <button onclick="pop0(event)" value="north" class="btn btn-info opt1"id="opt1">north</button>
+        <button onclick="pop1(event)" value="south" class ="btn btn-info opt2"id="opt2">south</button>
+        <button onclick="pop2(event)" value="east" class="btn btn-info opt3"id="opt3">east</button>
+        <button onclick="pop3(event)" value="west" class="btn btn-info opt4"id="opt4">west</button><br /><br /></div>
+    </div>
+
+    <div id="result">
+
+    <div class="container result">
+         <h2>Result</h2>
+         <hr>
+
+         <br />
+       <label>Comment:  <p id="comment"></p></label>
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: orange;
+}
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: orange;
+}
+</style>
+
+<div id="fivestar">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+</div>
+
+
+<div id="fourstar">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+</div>
+
+
+<div id="threestar">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+
+<div id="twostar">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+
+<div id="onestar">
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+
+
+
+
+<input type="button" class="lastb btn btn-sm btn-success"value="Restart" onClick="location.href=location.href">
+<br /><br /><br />
+     </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div  id="mainpart">
+
+<button id="countdowntimer" class="btn timer btn-info">0 </button>
+
+
+
+    <div class="jumbotron">
+
+    <h4 id="question"></h4>
+    <h4 id="sub" class="sub"> </h4>
+
+    </div>
+
+
+
+
+
+    <div class="header">
+        <button id="eraser" class="button" type = "button">Eraser</button>
+        <div class="rangeslider">
+              <input type="range" min="1" max="80" value="12" class="myslider" id="sliderRange">
+          </div>
+          <span style="color:white;"><font size = "2"><code id="size">64</code></font></span>
+        <button id="reset" class="button" type = "button">Reset</button>
+     </div>
+     <div style="margin-bottom:4px;">
+      <input class="cs" type="color" id="colsel1" value="#EF5350">
+      <input class="cs" type="color" id="colsel2" value="#BA68C8">
+      <input class="cs" type="color" id="colsel3" value="#64B5F6">
+      <input class="cs" type="color" id="colsel4" value="#66BB6A">
+      <button id="pick" class="button" type = "button">Pick Color</button>
+      <button class="button" id="indicator" type = "button" style="border-color:#fff;width:28px;float:right"></button>
+     </div>
+     <div style="margin-bottom:4px;">
+         <button id="undo" class="button" type = "button">Undo</button>
+        <!-- <div class="rangeslider">
+            <input type="range" min="1" max="80" value="12" class="myslider" id="undoSlider">
+         </div>
+         <span style="color:white;"><font size = "2"><code id="unre">Stroke Undo</code></font></span>
+         -->
+         <button id="redo" class="button" type = "button">Redo</button>
+     </div>
+     </div>
+
+
+
+</div>
+</div>
+<script>
+
+
+
+a=["north","south","east","west"]
+b=["right","left"]
+ans=""
+answer=[]
+x0=Math.floor(Math.random() * 4)
+
+x1=Math.floor(Math.random() * 2)
+
+i=1
+
+//direction
+d=a[x0]
+
+
+
+
+
+function go(){
+
+//no of ques
+no=parseInt(document.getElementById("ques").value)
+// time
+t=parseInt(document.getElementById("time").value)*1000
+
+ document.getElementById("head").style.display="none"
+ document.getElementById("mainpart").style.display="block" ;
+
+
+
+
+
+(function(count) { if (count < no+1) {
+ // call the function. foo();
+
+ check()
+ var caller = arguments.callee; window.setTimeout(function() {
+
+
+ caller(count + 1); }, t); } })(0);
+
+
+
+}
+
+
+
+
+//var timeleft = 0; var downloadTimer = setInterval(function(){ timeleft++; //document.getElementById("countdowntimer").textConte//nt = timeleft; },1000);
+
+
+
+
+
+
+
+function check(){
+
+x1=Math.floor(Math.random() * 2)
+//console.log("you are going "+d )
+//console.log( "now go to "+b[x1])
+
+//document.getElementById("ques").innerHTML=
+
+
+if(i==1){
+ document.getElementById("question").innerHTML="1) go to "+a[x0] +" and turn "+b[x1]
+}else if(i<=no){
+document.getElementById("question").innerHTML=""
+document.getElementById("sub").innerHTML=i+") turn "+b[x1]
+}
+
+
+element=document.getElementById("sub");
+element.classList.toggle("mystyle");
+
+
+
+
+
+if(d=="north"){
+  if(x1==0){
+      ans="east"
+  }
+   if(x1==1){
+       ans="west"
+   }
+
+}
+if(d=="south"){
+
+     if(x1==0){
+      ans="west"
+  }
+   if(x1==1){
+       ans="east"
+   }
+}
+
+
+if(d=="east"){
+
+     if(x1==0){
+      ans="south"
+  }
+   if(x1==1){
+       ans="north"
+   }
+}
+
+if(d=="west"){
+
+     if(x1==0){
+      ans="north"
+  }
+   if(x1==1){
+       ans="south"
+   }
+}
+//console.log(ans)
+if(i<=no){
+d=ans
+answer.push(ans)
+//console.log("abs:"+answer)
+
+}else{
+// result page
+
+console.log("answer: "+answer[answer.length-1])
+document.getElementById("mainpart").style.display="none"
+document.getElementById("head").style.display="none"
+
+document.getElementById("options").style.display="block"
+}
+i=i+1
+
+
+
+}
+
+
+
+
+
+
+function result(){
+
+
+if(option==answer[answer.length -1]){
+   // alert("corect answer")
+    time=t/1000
+
+
+
+if( no>=6 && time<=2){
+document.getElementById('fivestar').style.display= 'block'
+document.getElementById("comment").innerHTML="Professional"
+
+
+}else if(no>=4 && time<5){
+    document.getElementById('fourstar').style.display= 'block'
+document.getElementById("comment").innerHTML="Very good"
+
+}else if (no<10 && time<8) {
+    document.getElementById('threestar').style.display= 'block'
+document.getElementById("comment").innerHTML="Good"
+}else if (no<15 && time>=20) {
+    document.getElementById('twostar').style.display= 'block'
+document.getElementById("comment").innerHTML="Average"
+}else{
+    document.getElementById('onestar').style.display= 'block'
+document.getElementById("comment").innerHTML="Kid"
+}
+
+}else{
+document.getElementById("comment").innerHTML="wrog answer"
+}
+
+document.getElementById("options").style.display="none"
+        document.getElementById("result").style.display="block"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let g;
+
+let currentStroke;
+let strokeStack = [];
+let strokeIndex = 0;
+
+let col;
+let eraser = false;
+let sizeSlider;
+let eraseSize = 32;
+let brushSize = 6;
+let pickColor = false;
+let activeColBtn;
+let colIndicator;
+
+function setup(){
+    // cp1 = createColorPicker('#0000ee');
+    // cp2 = createColorPicker('#00ee00');
+    colSel1 = document.getElementById('colsel1');
+    colSel2 = document.getElementById('colsel2');
+    colSel3 = document.getElementById('colsel3');
+    colSel4 = document.getElementById('colsel4');
+    indicator = document.getElementById('indicator');
+
+    activeColBtn = colSel1;
+    indicator.style.backgroundColor = activeColBtn.value ;
+
+    col = color(activeColBtn.value);
+    er1 = document.getElementById('eraser');
+    pck = document.getElementById('pick');
+
+    undo = document.getElementById('undo');
+    redo = document.getElementById('redo');
+
+    undo.onclick = function(){
+        strokeIndex--;
+        if(strokeIndex < -1){
+            strokeIndex = -1;
+        }else{
+            redrawGraphics(strokeIndex);
+        }
+    }
+    redo.onclick = function(){
+        strokeIndex++;
+        if(strokeIndex > strokeStack.length - 1){
+            strokeIndex = strokeStack.length - 1;
+        }else{
+            drawStroke(strokeIndex);
+            image(g, 0, 0);
+        }
+    }
+    pck.onclick = function(){
+        pickColor = true;
+    }
+    er1.onclick=function(){
+        eraser = true;
+        indicator.style.backgroundColor = "#fff";
+        sizeSlider.value = eraseSize;
+        size.innerHTML = eraseSize+"px";
+    };
+
+    res = document.getElementById('reset');
+    res.onclick = ()=>{
+
+            background(255);
+            g.background(255);
+            strokeStack.splice(0);
+            strokeIndex=0;
+            activeColBtn.onclick();
+
+    };
+
+    //sizeSlider = createSlider(1, 80, brushSize);
+    sizeSlider = document.getElementById("sliderRange");
+    size = document.getElementById("size");
+    size.innerHTML = brushSize+"px";
+    sizeSlider.value = brushSize;
+    sizeSlider.oninput = function() {
+        size.innerHTML = this.value+"px";
+    };
+    /* sizeSlider.mouseReleased(()=>{
+        if(eraser){
+            eraseSize = sizeSlider.value();
+        }else{
+            brushSize = sizeSlider.value();
+        }
+    });
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var w = screen.width;
+var h= screen.height;
+wi=window.innerHeight
+he=window.innerHeight=h;
+document.body.style.width =w+'px';
+document.body.style.height =h+'px';
+
+//document.getElementById("body").focus();
+
+
+
+
+    let canvas =createCanvas(w,h);
+    // let canvas =createCanvas(480 -16,(480-16) *1.5);
+    paths = [];
+    g = createGraphics(width, height);
+    g.background(255);
+
+    strokeWeight(8);
+    g.strokeWeight(8);
+    g.noFill();
+
+    // cp1.input(setBrushColor1);
+    // cp2.input(setBrushColor2);
+    // cp1.mouseReleased(setBrushColor1);
+    // cp2.mouseReleased(setBrushColor2);
+    colSel1.oninput = setBrushColor;
+    colSel1.onclick = setBrushColor;
+    colSel2.oninput = setBrushColor;
+    colSel2.onclick = setBrushColor;
+    colSel3.oninput = setBrushColor;
+    colSel3.onclick = setBrushColor;
+    colSel4.oninput = setBrushColor;
+    colSel4.onclick = setBrushColor;
+    // colSel5.oninput = setBrushColor;
+    // colSel5.onclick = setBrushColor;
+    image(g, 0, 0);
+    strokeStack = [];
+}
+function setBrushColor(){
+    col = color(this.value);
+    indicator.style.backgroundColor = this.value ;
+    activeColBtn = this;
+    eraser = false;
+    sizeSlider.value = brushSize;
+    size.innerHTML = brushSize+"px";
+}
+
+function draw(){
+    // image(g, 0, 0);
+    if(pickColor && mousePressed){
+        image(g, 0, 0);
+        col = get(constrain(mouseX, 0, width), constrain(mouseY, 0, height));
+        activeColBtn.value = color(col).toString('#rrggbb');
+        fill(col);
+        indicator.style.backgroundColor = activeColBtn.value;
+        strokeWeight(1);
+        stroke(0);
+        let img = get(mouseX - 80, mouseY - 80, 160, 160);
+        let x = mouseX > 160? mouseX - 160 : mouseX;
+        let y = mouseY > 160? mouseY - 160 : mouseY
+        rect(x, y, 160, 160)
+        image(img , x, y);
+        line(x + 80, y, x + 80, y+160);
+        line(x, y + 80, x + 160, y + 80);
+        fill(0);
+        ellipse(mouseX, mouseY, 10,10);
+        // pickColor = false;
+    }
+}
+
+function drawStroke(index){
+    let str = strokeStack[index];
+    //if(!str) return;
+    g.strokeWeight(str.weight);
+    g.stroke(str.stroke);
+    g.beginShape();
+    g.point(str.begin.x, str.begin.y);
+    g.curveVertex(str.begin.x , str.begin.y);
+    g.curveVertex(str.begin.x , str.begin.y);
+    for(let pt of str.drag){
+        g.curveVertex(pt.x, pt.y);
+    }
+    g.curveVertex(str.end.x, str.end.y);
+    g.endShape();
+}
+function redrawGraphics(upto){
+    g.background(255);
+    for(let i = 0; i <= upto; i++){
+        drawStroke(i);
+    }
+    image(g, 0, 0);
+}
+
+let drawing = true;
+
+function mousePressed(){
+    currentStroke = {};
+    if(mouseY <= 0 || pickColor){
+        drawing = false;
+        return;
+    }else{
+        drawing = true;
+    }
+    strokeWeight(sizeSlider.value);
+    g.strokeWeight(sizeSlider.value);
+    currentStroke.weight = sizeSlider.value;
+    if(eraser){
+        stroke(255);
+        g.stroke(255);
+        eraseSize = sizeSlider.value;
+        currentStroke.stroke = 255;
+    }else{
+        stroke(col);
+        g.stroke(col);
+        currentStroke.stroke = col;
+        brushSize = sizeSlider.value;
+    }
+
+    currentStroke.begin = {x:mouseX, y:mouseY};
+    currentStroke.drag = [];
+    g.beginShape();
+    g.point(mouseX, mouseY);
+    g.curveVertex(mouseX , mouseY);
+    g.curveVertex(mouseX , mouseY);
+}
+function mouseDragged(){
+    if(!drawing){
+        return;
+    }
+    currentStroke.drag.push({x:mouseX, y:mouseY});
+    line(pmouseX, pmouseY, mouseX, mouseY);
+    g.curveVertex(mouseX, mouseY);
+}
+function mouseReleased(){
+    if(pickColor){
+        pickColor = false;
+        image(g, 0, 0);
+    }
+    if(!drawing){
+        return;
+    }
+
+    currentStroke.end={x:mouseX, y:mouseY};
+    let str = Object.assign({}, currentStroke);
+
+   if(strokeIndex < strokeStack.length - 1){
+       strokeStack.splice(strokeIndex+1);
+   }
+    strokeStack.push(str);
+    strokeIndex = strokeStack.length - 1;
+
+
+    //print(strokeIndex);
+    g.curveVertex(mouseX, mouseY);
+    g.endShape();
+    image(g, 0, 0);
+}
+
+
+
+function pop0(){
+    option="north"
+    result()
+}
+function pop1(){
+    option="south"
+    result()
+}
+function pop2(){
+    option="east"
+    result()
+}
+function pop3(){
+    option="west"
+    result()
+}
+
+
+</script>
+    </body>
+    <br />
+    <hr>
+</html>

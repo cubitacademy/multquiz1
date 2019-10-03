@@ -1,0 +1,20 @@
+
+@media (max-width: 800px) {
+.logo{
+width:20%;
+}
+
+.container-fluid{
+background-color:rgb(240,240,240);
+padding:0;
+}
+
+.card{
+
+min-height:180px;
+}
+
+.mobile{
+  display:none;
+}
+}

@@ -1,0 +1,178 @@
+<!doctype html>
+<html ng-app lang="en">
+
+<head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-147749876-1"></script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-147749876-1');</script>
+
+
+  <meta charset="utf-8">
+  <meta name="description" content="Bank exam helper">
+  <meta name="keywords" content="Multiplication Tables,Reasoning,Square,Direction,letter Count,Reverse Pair,a list of multiplication tables,a multiplication table game">
+  <meta name="author" content="Athul jacob cubitacademy,Direction">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="icon" type="image/png" sizes="16x16" href="images/android-chrome-192x192.png">
+  <title>Multiplication Table</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
+
+
+
+</head> <!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+
+<link rel="stylesheet" href="style.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+
+
+<body>
+
+
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <!-- Brand -->
+      <img src="http://www.cubitacademy.com/sites/default/files/cubit-logo.jpg" width="7%" class="img-thumbnail logo" />
+
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Quiz</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Reference</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tense</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact / Feedback</a>
+          </li>
+        </ul>
+      </div>
+      </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+  <div class="card mb-3" >
+    <div class="row no-gutters">
+
+
+
+      <div class="sidebar col-md-2">
+
+      </div>
+
+
+
+
+
+      <div class="post col-md-7  bg-light mb-3">
+
+        <div  id="table">
+              <div class="jumbotron">
+                <h1>Multiplication table </h1>
+              </div>
+            <p>Number &nbsp<input type="number"  value=8 id="mu"></p>
+             <p>upto &nbsp &nbsp &nbsp &nbsp <input type="number" id="up" value="25"></p>
+           <p>start from<input type="number" id="start" value="1"></p>
+              <button type="button" class="btn btn-primary" id="go">&nbspGo&nbsp</button>
+            <!-- &nbsp&nbsp <button type="button" class="btn btn-danger" id="clear">Clear</button> -->
+        <div class="jumbotron">
+                <h3 id="num" class="num"> </h3>
+                </div>
+              </div>
+
+
+      </div>
+
+
+
+
+
+      <div class="sidebar col-md-2 text-white bg-secondary mb-3">
+        <div class="card-body ">
+
+          <p class="card-text"><small >Last updated 1 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<!-- <script src="table.js" charset="utf-8"></script> -->
+
+    <script type="text/javascript">
+    a=document.getElementById("mu")
+    a1=(a.value)
+    b=document.getElementById("up")
+    ia=document.getElementById("start")
+    ib=ia.value
+    i=parseInt(ib)
+    document.getElementById("go").addEventListener("click", myFunction);
+    function myFunction(){
+    y= document.getElementById("num")
+        y.innerHTML=""
+
+    ia=document.getElementById("start")
+    ib=ia.value
+    i=parseInt(ib)
+    a=document.getElementById("mu")
+    a1=parseInt(a.value)
+
+    while(i<=b.value){
+        m=a1*i
+
+
+     var para = document.createElement("h4");
+    para.innerHTML =a1+"*"+i+"&nbsp"+"="+"&nbsp"+ m;
+      document.getElementById("num").appendChild(para);
+
+
+        i=i+1
+    }
+    }
+    myFunction()
+    </script>
+
+
+    </body>
+    </html>

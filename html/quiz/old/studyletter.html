@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-147749876-1"></script>
+<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-147749876-1');</script> 
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3048433912865617",
+          enable_page_level_ads: true
+     });
+</script>
+
+
+
+
+
+
+
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body {
+    background-image:url(https://cdn.hipwallpaper.com/i/33/2/CTZsuY.jpg);
+    background-attachment: fixed;
+    background-position:  center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+        
+    */
+    background-color: #fff;
+    font-family: "Quicksand";
+    margin:0;
+    text-align:center;
+    transition:1s;
+    text-align: -webkit-center;
+    color:#555;
+    height:100vh;
+}
+h3{
+    background-color:white;
+    text-align:center;
+}
+.red{
+    color:red;
+}
+td{
+    background:black;
+    font-size:16px;
+    color:white;
+}
+.trick{
+    display:none;
+}
+</style>
+<body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Alaphabets</h1>
+        <p>Count!</p>
+      </div>
+      </div>
+      <div class="container table-responsive">
+        <table class="table table-bordered">
+          <tr>
+            <td>E </td>
+            <td>J</td>
+            <td>O</td>
+            <td>T</td>
+            <td>Y</td>
+          </tr>
+        
+        <tbody>
+          <tr>
+            <td>5</td>
+            <td>10</td>
+            <td>15</td>
+            <td>20</td>
+            <td>25</td>
+          </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="container">
+    <button class="btn btn-success" onclick="count()">Count</button>
+    <button  class="btn btn-primary"onclick="pair1()">Reverse Pair</button>
+    <button class="btn btn-danger"onclick="pair()">Reverse Pair with numbers</button><br /><br />
+    <div>
+    <button onclick="trick()" class=" btn btn-info trick" id="trick">with trick</button></div>
+    <div id="note"></div>
+      <div class="well well-lg" id="alp">
+      </div>
+      </div>
+      <button class="btn btn-block onclick="quiz">Questions</button>
+      <br />
+    </div>
+    <script>
+       a=Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z ")
+f=Array("AZ","BoY,BY","CiX","DeW,WeD","EVer","UF","GT racing","HiS","IR rays","Jack-Queen","Kp kirshna pilla, PK","LOL","MaN")
+b=13 //b is the number of alphabet
+c=b-1
+d=a[c]+a[25-c] //with reverse pair
+i=0
+
+window.onload=function(){
+while(i<=c){
+if(i==4 || i==9){
+      var para = document.createElement("h3");
+para.innerHTML ="<span class='red'>"+a[i]+"&nbsp - &nbsp"+(i+1)+"<br>"+"</span>"
+document.getElementById("alp").appendChild(para);
+}
+else{ var para = document.createElement("h3");
+para.innerHTML =a[i]+"&nbsp - &nbsp"+(i+1)+"<br>"
+  document.getElementById("alp").appendChild(para);}
+  i=i+1
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function pair(){
+
+var element = document.getElementById("trick");
+  element.classList.add("trick");
+
+
+p=document.getElementById("note")
+p.innerHTML ="<br/>"+"<br/>"+"b number = 2"+"<br />"+"so y number is 27-2"
+  
+
+
+
+    y= document.getElementById("alp")
+    y.innerHTML=""
+    i=0
+    while(i<=c){
+if(i==4 || i==9){
+      var para = document.createElement("h3");
+para.innerHTML =a[i]+a[25-i]+"&nbsp - &nbsp"+(i+1)+","+(26-i)+"<br>"
+document.getElementById("alp").appendChild(para);
+}
+else{ var para = document.createElement("h3");
+para.innerHTML =a[i]+a[25-i]+"&nbsp - &nbsp"+(i+1)+","+(26-i)+"<br>"
+  document.getElementById("alp").appendChild(para);}
+  i=i+1
+    }
+  }
+
+
+
+function pair1(){
+
+var element = document.getElementById("trick");
+  element.classList.remove("trick");
+    y= document.getElementById("alp")
+    y.innerHTML=""
+    i=0
+    while(i<=c){
+if(i==4 || i==9){
+      var para = document.createElement("h3");
+para.innerHTML ="<span class='red'>"+a[i]+a[25-i]+"&nbsp"+"<br>"+"</span>"
+document.getElementById("alp").appendChild(para);
+}
+else{ var para = document.createElement("h3");
+para.innerHTML =a[i]+a[25-i]+"&nbsp"+"<br>"
+  document.getElementById("alp").appendChild(para);}
+  i=i+1
+    }
+  }
+
+
+
+
+function count(){
+
+
+var element = document.getElementById("trick");
+  element.classList.add("trick");
+
+
+
+
+y= document.getElementById("alp")
+    y.innerHTML=""
+i=0
+while(i<=c){
+if(i==4 || i==9){
+      var para = document.createElement("h3");
+para.innerHTML ="<span class='red'>"+a[i]+"&nbsp - &nbsp"+(i+1)+"<br>"+"</span>"
+document.getElementById("alp").appendChild(para);
+}
+else{ var para = document.createElement("h3");
+para.innerHTML =a[i]+"&nbsp - &nbsp"+(i+1)+"<br>"
+  document.getElementById("alp").appendChild(para);}
+  i=i+1
+    }
+
+}
+
+
+
+function trick(){
+
+ 
+    y= document.getElementById("alp")
+    y.innerHTML=""
+    i=0
+    while(i<=c){
+if(i==4 || i==9){
+      var para = document.createElement("h4");
+para.innerHTML ="<span class='red'>"+a[i]+a[25-i]+"&nbsp-"+f[i]+"<br>"+"</span>"
+document.getElementById("alp").appendChild(para);
+}
+else{ var para = document.createElement("h4");
+para.innerHTML =a[i]+a[25-i]+"&nbsp-"+f[i]+"<br>"
+  document.getElementById("alp").appendChild(para);}
+  i=i+1
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+    </script>
+</body>
+</html>
